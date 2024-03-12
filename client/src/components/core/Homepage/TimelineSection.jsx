@@ -32,16 +32,19 @@ const timeline = [
 const TimelineSection = () => {
   return (
     <div>
-      <div className='flex flex-row gap-15 items-center'>
+      <div className='flex flex-row flex-wrap gap-6  items-center lg:flex-nowrap lg:gap-15'>
 
-        <div className='w-[45%] flex flex-col gap-5'>
+        <div className='flex flex-col gap-16 lg:w-[45%] ' >
             {
                 timeline.map( (element, index) => {
                     return (
-                        <div className='flex flex-row gap-6' key={index}>
+                        <div className='flex flex-row gap-10 ' key={index}>
 
-                            <div className='w-[50px] h-[50px] bg-white flex items-center'>
-                                <img src={element.Logo} />
+                            <div className='w-[50px] h-[50px] bg-white flex justify-center  items-center  rounded-full shadow-[0px_0px_20px_10px_#00000024] relative'>
+                                <img src={element.Logo}  />
+                                <div className='absolute bottom-16 border-r-[1px] border-dashed border-richblack-100'>
+                                <p className={index ?`{ h-10  lastOne}`: ""}></p>
+                                </div>
                             </div>
 
                             <div>
@@ -54,11 +57,11 @@ const TimelineSection = () => {
                 } )
             }
         </div>
-        <div className='relative shadow-blue-200'>
+        <div className='relative shadow-blue-200 z-10'>
 
             <img  src={timelineImage}
             alt="timelineImage"
-            className='shadow-white object-cover h-fit'
+            className='shadow-white object-cover h-fit '
             />
 
             <div className='absolute bg-caribbeangreen-700 flex flex-row text-white uppercase py-7
@@ -74,6 +77,7 @@ const TimelineSection = () => {
                 </div>
 
             </div>
+            <div className={"w-[330px] h-[250px] blur-[40px]  bg-gradient-to-br from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB] rounded-[50%] absolute top-20 left-[-1rem] -z-10 lg:w-[110%] lg:h-[50%]"}></div>
 
         </div>
 

@@ -8,10 +8,10 @@ const CodeBlocks = ({
     position, heading, subheading, ctabtn1, ctabtn2, codeblock, backgroudGradient, codeColor
 }) => {
   return (
-    <div className={`flex ${position} my-20 justify-between gap-10`}>
+    <div className={`flex ${position} flex-wrap my-20 justify-between gap-10`}>
       
     {/*Section 1*/}
-    <div className='w-[50%] flex flex-col gap-8'>
+    <div className=' flex flex-col justify-center items-center gap-8 lg:w-[50%] lg:justify-normal lg:items-start'>
         {heading}
         <div className='text-richblack-300 font-bold '>
             {subheading}
@@ -34,7 +34,7 @@ const CodeBlocks = ({
     </div>
 
      {/*Section 2*/}
-     <div className=' h-fit  flex flex-row text-10[px] w-[100%] py-4 lg:w-[500px]'> 
+     <div className='relative h-fit  flex flex-row text-10[px] w-[100%] py-4 lg:w-[500px] bg-gray-600 rounded-sm bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20  border-[1px] border-[#ffffff0c]'> 
         {/*HW -> BG gradient*/}
 
         <div className='text-center flex flex-col w-[10%] text-richblack-400 font-inter font-bold'>
@@ -51,7 +51,7 @@ const CodeBlocks = ({
             <p>11</p>
         </div>
 
-        <div className={`w-[90%] flex flex-col gap-2 font-bold font-mono ${codeColor} pr-2`}>
+        <div className={` w-[300px] flex flex-col  flex-wrap gap-2 font-bold font-mono ${codeColor} pr-2  `}>
            <TypeAnimation
             sequence={[codeblock, 2000, ""]}
             repeat={Infinity}
@@ -66,6 +66,7 @@ const CodeBlocks = ({
             omitDeletionAnimation={true}
            />
         </div>
+        <div className={`w-[200px] h-[150px]  blur-[110px] ${backgroudGradient}  rounded-full absolute top-0 left-0 z-0 opacity-50`}></div>
 
      </div>
 
